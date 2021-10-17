@@ -44,11 +44,21 @@ export default function SignIn() {
       email: data.get('email'),
       password: data.get('password'),
     });
-  }; 
+  };  
+
+  //context container error?
  // const { zilPay, contract } = ContextContainer.useContainer(); 
 //  const createMinter = async () => {
  //   configureMinter(contract, zilPay);
-//  };
+//  };  
+
+// pass in user's zilpay wallet as parameter to do checks on smart contract 
+  const handleExistingUser = () => {  
+    //check to see if employee has the nft in there zilpay through smart contract 
+    //if not pass them trigger popup for registering
+    //if so then pass them to the next screen
+    
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -81,7 +91,11 @@ export default function SignIn() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2 }} 
+              onClick = {() => {  
+                //pass in zilpay address here
+                handleExistingUser()
+              }}
             >
               Existing Employee
             </Button>
