@@ -12,7 +12,11 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';  
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom"; 
+import Toolbar from '@mui/material/Toolbar'; 
+import AppBar from '@mui/material/AppBar';  
+import backgroundImage from '../images/background3.jpg'
+import logo from './logo.png';
 import ContextContainer from '../functions/contextContainer';  
 //@ts-ignore
 import configureMinter from '../functions/configureMinter'
@@ -63,9 +67,24 @@ export default function SignIn() {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
+    <ThemeProvider theme={theme}>  
+    <AppBar
+        position="absolute"
+        color="default"
+        elevation={0}
+        sx={{
+          position: 'relative',
+          borderBottom: (t) => `1px solid ${t.palette.divider}`,
+        }}
+      >
+        <Toolbar>
+          <Typography variant="h6" color="inherit" noWrap>
+         Welcome To NakamotoLabs
+          </Typography>
+        </Toolbar>
+      </AppBar> 
+      <div style={{ backgroundImage: `url(${backgroundImage})` }} >
+      <Container component="main" maxWidth="xs"> 
         <Box
           sx={{
             marginTop: 8,
@@ -74,21 +93,13 @@ export default function SignIn() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
+          <Avatar src="./logo.png">
+   
           </Avatar>
-          <Typography component="h1" variant="h5">
+          {/* <Typography component="h1" variant="h5">
             Connect Zilpay Wallet
-          </Typography> 
+          </Typography>  */}
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }} 
-            >
-              New Hire
-            </Button> 
             <Button
               type="submit"
               fullWidth
@@ -100,7 +111,7 @@ export default function SignIn() {
                 
               }}
             >
-              Existing Employee
+              Login
             </Button>
             <Grid container>
             
@@ -108,7 +119,8 @@ export default function SignIn() {
             </Grid>
           </Box>
         </Box>
-      </Container>
+      </Container> 
+      </div>
     </ThemeProvider>
   );
 }
