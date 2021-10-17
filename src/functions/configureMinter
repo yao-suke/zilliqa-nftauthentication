@@ -1,0 +1,27 @@
+import getCallParameters from './getCallParameters';
+import toast from 'react-hot-toast'; 
+//@ts-ignore
+import transitionMessageAlert from './transitionMessageAlert'; 
+//@ts-ignore
+import { decodeZilPayError } from './decodeMessage'; 
+
+const configureMinter = async (
+    contract: any,
+    zilPay: any,
+) => {
+    try {
+        const callTransition = await contract.call(
+            'configureMinter',
+            [
+                {
+                    vname: 'name',
+                    type: 'String',
+                    value: name,
+                }
+            ]
+        );
+        transitionMessageAlert(zilPay, callTransition.ID, 'Creating user');
+    } catch (error) {
+        toast.error(decodeZilPayError(error));
+    }
+};
