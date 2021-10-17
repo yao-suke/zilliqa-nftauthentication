@@ -11,7 +11,10 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles'; 
+import ContextContainer from '../functions/contextContainer';  
+//@ts-ignore
+import configureMinter from '../functions/configureMinter'
 
 function Copyright(props: any) {
   return (
@@ -26,7 +29,11 @@ function Copyright(props: any) {
   );
 }
 
-const theme = createTheme();
+const theme = createTheme(); 
+type props = {
+  showSignUp: boolean;
+  setShowSignUp(visible: boolean): void;
+};
 
 export default function SignIn() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -37,7 +44,11 @@ export default function SignIn() {
       email: data.get('email'),
       password: data.get('password'),
     });
-  };
+  }; 
+ // const { zilPay, contract } = ContextContainer.useContainer(); 
+//  const createMinter = async () => {
+ //   configureMinter(contract, zilPay);
+//  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -56,13 +67,13 @@ export default function SignIn() {
           </Avatar>
           <Typography component="h1" variant="h5">
             Connect Zilpay Wallet
-          </Typography>
+          </Typography> 
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2 }} 
             >
               New Hire
             </Button>
