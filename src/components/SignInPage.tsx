@@ -11,7 +11,8 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles'; 
+import { createTheme, ThemeProvider } from '@mui/material/styles';  
+import { useHistory } from "react-router-dom";
 import ContextContainer from '../functions/contextContainer';  
 //@ts-ignore
 import configureMinter from '../functions/configureMinter'
@@ -35,7 +36,8 @@ type props = {
   setShowSignUp(visible: boolean): void;
 };
 
-export default function SignIn() {
+export default function SignIn() { 
+  let history = useHistory()
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -86,7 +88,7 @@ export default function SignIn() {
               sx={{ mt: 3, mb: 2 }} 
             >
               New Hire
-            </Button>
+            </Button> 
             <Button
               type="submit"
               fullWidth
@@ -94,7 +96,8 @@ export default function SignIn() {
               sx={{ mt: 3, mb: 2 }} 
               onClick = {() => {  
                 //pass in zilpay address here
-                handleExistingUser()
+                history.push('/dashboard')
+                
               }}
             >
               Existing Employee
