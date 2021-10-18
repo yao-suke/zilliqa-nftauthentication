@@ -22,7 +22,7 @@ function Copyright() {
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+      NakomotoLabs
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -36,10 +36,6 @@ function getStepContent(step: number) {
   switch (step) {
     case 0:
       return <AddressForm />;
-    case 1:
-      return <WalletForm />;
-    case 2:
-      return <Review />;
     default:
       throw new Error('Unknown step');
   }
@@ -161,13 +157,13 @@ export default function AdminPage() {
           <Typography component="h1" variant="h4" align="center">
             New Employee Creation
           </Typography>
-          <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
+          {/* <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
             {steps.map((label) => (
               <Step key={label}>
                 <StepLabel>{label}</StepLabel>
               </Step>
             ))}
-          </Stepper>
+          </Stepper> */} 
           <React.Fragment>
             {activeStep === steps.length ? (
               <React.Fragment>
@@ -192,9 +188,8 @@ export default function AdminPage() {
                   <Button
                     variant="contained"
                     onClick={handleNext}
-                    sx={{ mt: 3, ml: 1 }}
                   >
-                    {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
+                    Mint NFT For Employee
                   </Button>
                 </Box>
               </React.Fragment>
