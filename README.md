@@ -37,9 +37,9 @@ If the Admin smart contract is exploited then there would be extremely damaging 
 
 ## Technologies Used <a name="tech"></a>    
 
-React 
-TypeScript
-Scilla
+#### React 
+#### TypeScript
+#### Scilla
 
 
 ## Setup <a name="setup"></a>
