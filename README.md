@@ -1,4 +1,5 @@
-# Zilliqa NFT Hackathon - Using NFTs on Zilliqa To Authenticate Users 
+# Zilliqa NFT Hackathon - Using NFTs on Zilliqa To Authenticate Users  
+<img src="https://github.com/yao-suke/zilliqa-nftauthentication/blob/main/download.png" width="100" height="100"/>
 Youtube Demo & Presentation - 
 - [Problem](#problem) 
 - [High Level Solution](#solution)
