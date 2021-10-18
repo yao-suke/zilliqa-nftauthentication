@@ -47,8 +47,8 @@ If the Admin smart contract is exploited then there would be extremely damaging 
 
 
 ## Setup <a name="setup"></a>
-Clone Repository 
-Enter Repository On Terminal 
-Run npm install 
-Run yarn start
+#### Clone Repository 
+#### Enter Repository On Terminal 
+#### Run npm install 
+#### Run yarn start
 
