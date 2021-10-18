@@ -1,8 +1,6 @@
-# Getting Started with Create React App
+# Zilliqa NFT Hackathon - NFT Authentication 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+## Why?
 
 In the project directory, you can run:
 
