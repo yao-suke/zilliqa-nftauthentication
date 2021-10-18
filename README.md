@@ -20,7 +20,10 @@ The onboarding process for employees at tech companies is a long road of usernam
 What if when users joined a DAO on Zilliqa they have an NFT minted to give them access to tools for those in the DAO? 
 
 ### Easier Background Checks 
-As well as there being an NFT for an employee's access to the internal tools, what if another was minted as a certifciate for this person's employment at a company? Essentially using Zilliqa's blockchain for some to have a "resume" based on the NFTs in someone's wallet showing the different places they have worked. 
+As well as there being an NFT for an employee's access to the internal tools, what if another was minted as a certifciate for this person's employment at a company? Essentially using Zilliqa's blockchain for some to have a "resume" based on the NFTs in someone's wallet showing the different places they have worked.   
+
+### NFT Community DApps 
+Similar to BAYC on ethereum, it would be great to provide the boiler plate code for NFT art projects on Zilliqa to easily create communities for their users based on ownership on their NFT. 
 
 
 ## Smart Contract Design <a name="contract"></a>
