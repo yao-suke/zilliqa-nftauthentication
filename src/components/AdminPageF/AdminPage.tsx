@@ -15,7 +15,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AddressForm from './AddressForm';
 import WalletForm from './WalletForm';
 import Review from './Review'; 
-import ContextContainer from "../../functions/contextContainer"; 
+import ContextContainer from "../../functions/contextContainer";  
+import configureMinter from "../../functions/configureMinter" 
+import mintNFT from "../../functions/mint"
 
 function Copyright() {
   return (
@@ -43,71 +45,11 @@ function getStepContent(step: number) {
 
 const theme = createTheme();
 
-export default function AdminPage() {
+export default function AdminPage() { 
+  var employeeAddress: any
   const [activeStep, setActiveStep] = React.useState(0); 
   const [zilPayCheck, setZilPayCheck] = useState<number>(0);
-    const {
-        zilPay,
-        setZilPay,
-        error,
-        setError,
-        setContract,
-        setContractState,
-        setCurrentBlockNumber,
-    } = ContextContainer.useContainer();
-
-    const getContractState = async () => {
-        const contract = await zilPay.contracts.at(
-            process.env.REACT_APP_SMART_CONTRACT_ADDRESS
-        );
-        setContract(contract);
-        const contractState = await contract.getState();
-        setContractState(contractState);
-    };
-
-    useEffect(() => {
-        if (error === false) return;
-        // @ts-ignore
-        const zilPay = window.zilPay;
-        if (zilPay === undefined) {
-            setError(true);
-            return;
-        }
-        setZilPay(zilPay);
-        setError(false);
-    }, [error]);
-
-    useEffect(() => {
-        if (error && zilPayCheck < 100) {
-            setZilPayCheck(zilPayCheck + 1);
-            setError(undefined);
-            return;
-        }
-        if (error !== false) return;
-
-        let block: any = undefined;
-        let account: any = undefined;
-
-        if (!zilPay.wallet.isConnect) return;
-        try {
-            block = zilPay.wallet.observableBlock().subscribe((block: any) => {
-                const blockNumber = parseInt(block.TxBlock.header.BlockNum);
-                setCurrentBlockNumber(blockNumber);
-                getContractState();
-            });
-            account = zilPay.wallet
-                .observableAccount()
-                .subscribe(() => getContractState());
-
-            getContractState();
-        } catch (e) {
-            console.log(e);
-        }
-        return function cleanup() {
-            block?.unsubscribe?.();
-            account?.unsubscribe?.();
-        };
-    }, [error]);
+  const { zilPay, contract } = ContextContainer.useContainer();
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
@@ -120,7 +62,23 @@ export default function AdminPage() {
   const connectZilPay = async () => {
     await zilPay.wallet.connect();
     window.location.reload();
-};
+};  
+
+const createMinter = async () => {  
+  configureMinter();
+}; 
+
+const mintNonFungible = async (walletAddress: any) => {  
+  const token_uri = "" 
+  const token_id = ""
+  mintNFT(walletAddress, token_uri, token_id)
+} 
+
+const createNewEmployee = async (walletAddress: any) => {  
+  createMinter() 
+//mintNonFungible(walletAddress)
+
+}
 
   return zilPay.wallet.isConnect ? (  
     
@@ -187,7 +145,7 @@ export default function AdminPage() {
                   )}
                   <Button
                     variant="contained"
-                    onClick={handleNext}
+                    onClick={() => createNewEmployee("")}
                   >
                     Mint NFT For Employee
                   </Button>
