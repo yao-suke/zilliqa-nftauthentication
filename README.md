@@ -7,7 +7,6 @@ Youtube Demo & Presentation -
 - [Problem](#problem) 
 - [High Level Solution](#solution)
 - [Other Potential Use Cases](#usecases)
-- [Smart Contract Design](#contract) 
 - [Security Concerns](#security)
 - [Future Features and Plans](#future)
 - [Technologies Used](#tech)
@@ -37,14 +36,13 @@ As well as there being an NFT for an employee's access to the internal tools, wh
 Similar to BAYC on ethereum, it would be great to provide the boiler plate code for NFT art projects on Zilliqa to easily create communities for their users based on ownership on their NFT. 
 
 
-## Smart Contract Design <a name="contract"></a>
-
-
 ## Security Concerns  <a name="security"></a>
 If the Admin smart contract is exploited then there would be extremely damaging reprecussions to the organization. I do not see any in the current implementation of the smart contract but as it becomes more robust with more functionality there is potential for vunerabilities to slip through the cracks. 
 
 ## Future Features and Plans <a name="future"></a>
-
+- Finishing the core functionality of the DApp. Would love for this repository to be an option for future DApps on Zilliqa to fork and use for their developers 
+- Creating Administrator Smart Contract to have NFT minting and other IT services managed by this smart contract 
+- Creating GraphQL Schema for saving NFT meta data
 
 ## Technologies Used <a name="tech"></a>    
 
