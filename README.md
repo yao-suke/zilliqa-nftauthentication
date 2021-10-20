@@ -17,9 +17,10 @@ Youtube Demo & Presentation -
 The onboarding process for employees at tech companies is a long road of usernames, new email addresses, and passwords across several different internal tools. Even with tools such as Okta and GMail to authenticate employees quickly, this can become a hassle if you're attempting to login to your company accounts on another device(cellphone,tablet,etc.) Also, a third party sits between you and having access to these internal tools often to grant you access - the IT Security Deparment. Can NFTs completely replace this process in companies, allowing for easier authentication to internal tools? 
 
 ## User Flow <a name="solution"></a>
-<img src="https://github.com/yao-suke/zilliqa-nftauthentication/blob/main/Screen%20Shot%202021-10-18%20at%2012.30.13%20AM.png" width="500" height="450"/> 
+<img src="https://github.com/yao-suke/zilliqa-nftauthentication/blob/main/Screen%20Shot%202021-10-18%20at%2012.30.13%20AM.png" width="500" height="450"/>  
 
-## Systems Design
+## Systems Design 
+<img src="https://github.com/yao-suke/zilliqa-nftauthentication/blob/main/nft_Systems_Design.pdf" width="500" height="450"/>  
 
 ## Potential Use Cases <a name="usecases"></a>   
 
