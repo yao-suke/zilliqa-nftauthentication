@@ -39,11 +39,13 @@ Similar to BAYC on ethereum, it would be great to provide the boiler plate code 
 
 ## Security Concerns  <a name="security"></a>
 - If the Admin smart contract is exploited then there would be extremely damaging reprecussions to the organization. I do not see any in the current implementation of the smart contract but as it becomes more robust with more functionality there is potential for vunerabilities to slip through the cracks.   
-- DNS hijacking potentially leading employees to a malicious copy of the site 
+- DNS hijacking potentially leading employees to a malicious copy of the site  
+- Loss of metadata in cloud server. This could potentially make the smart contracts useless if any data needed to call transitions in our smart contracts are missing. 
 
 
 #### Possible Solutions For Security Concerns  
-Keeping a decentralized copy of the DApp's front end hosted on Skynet using an HNS Domain in this instance would be useful for victims of this attack to be able to still access the original smart contracts. HNS Domains are censorship-resistant, seizure-resistant, and tamper-proof because they are stored on a Proof-of-Work blockchain.
+Keeping a decentralized copy of the DApp's front end hosted on Skynet using an [HNS Domain](https://hnsdomain.com/) in this instance would be useful for victims of this attack to be able to still access the original smart contracts. HNS Domains are censorship-resistant, seizure-resistant, and tamper-proof because they are stored on a Proof-of-Work blockchain. 
+We can also use a decentralized storage solution such as the [Akash network](https://akash.network/) as a backup in case a centralized point such as Amazon were to be fail or be compromised. 
 
 ## Future Features and Plans <a name="future"></a>
 - Finishing the core functionality of the DApp. Would love for this repository to be an option for future DApps on Zilliqa to fork and use for their developers 
