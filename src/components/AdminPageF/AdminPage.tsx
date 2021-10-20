@@ -17,7 +17,8 @@ import WalletForm from './WalletForm';
 import Review from './Review'; 
 import ContextContainer from "../../functions/contextContainer";  
 import configureMinter from "../../functions/configureMinter" 
-import mintNFT from "../../functions/mint"
+import mintNFT from "../../functions/mint" 
+import { useHistory } from "react-router-dom"; 
 
 function Copyright() {
   return (
@@ -145,9 +146,12 @@ const createNewEmployee = async (walletAddress: any) => {
                   )}
                   <Button
                     variant="contained"
-                    onClick={() => createNewEmployee("0xf3CEc1eaD24f553ad14aC03eA4EfB2F7E9708011")}
+                    onClick={ () => { createNewEmployee("0xf3CEc1eaD24f553ad14aC03eA4EfB2F7E9708011") 
+                    
+                  }}
                   >
-                    Mint NFT For Employee
+                    Mint NFT For Employee 
+            
                   </Button>
                 </Box>
               </React.Fragment>

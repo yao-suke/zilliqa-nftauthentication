@@ -22,7 +22,7 @@ function createData(
 const rows = [
   createData(
     0,
-    '16 Mar, 2019',
+    '16 Mar, 2022',
     'Elvis Presley',
     'Tupelo, MS',
     'VISA ⠀•••• 3719',
@@ -30,7 +30,7 @@ const rows = [
   ),
   createData(
     1,
-    '16 Mar, 2019',
+    '16 Mar, 2022',
     'Paul McCartney',
     'London, UK',
     'VISA ⠀•••• 2574',
@@ -39,7 +39,7 @@ const rows = [
   createData(2, '16 Mar, 2019', 'Tom Scholz', 'Boston, MA', 'MC ⠀•••• 1253', 100.81),
   createData(
     3,
-    '16 Mar, 2019',
+    '16 Mar, 2022',
     'Michael Jackson',
     'Gary, IN',
     'AMEX ⠀•••• 2000',
@@ -47,7 +47,7 @@ const rows = [
   ),
   createData(
     4,
-    '15 Mar, 2019',
+    '15 Mar, 2022',
     'Bruce Springsteen',
     'Long Branch, NJ',
     'VISA ⠀•••• 5919',
@@ -62,15 +62,12 @@ function preventDefault(event: React.MouseEvent) {
 export default function Orders() {
   return (
     <React.Fragment>
-      <Title>Recent Orders</Title>
+      <Title>Recent Messages </Title>
       <Table size="small">
         <TableHead>
           <TableRow>
             <TableCell>Date</TableCell>
             <TableCell>Name</TableCell>
-            <TableCell>Ship To</TableCell>
-            <TableCell>Payment Method</TableCell>
-            <TableCell align="right">Sale Amount</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -78,9 +75,6 @@ export default function Orders() {
             <TableRow key={row.id}>
               <TableCell>{row.date}</TableCell>
               <TableCell>{row.name}</TableCell>
-              <TableCell>{row.shipTo}</TableCell>
-              <TableCell>{row.paymentMethod}</TableCell>
-              <TableCell align="right">{`$${row.amount}`}</TableCell>
             </TableRow>
           ))}
         </TableBody>

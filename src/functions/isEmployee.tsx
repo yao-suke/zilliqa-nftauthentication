@@ -3,21 +3,28 @@ import toast from 'react-hot-toast';
 //@ts-ignore
 import transitionMessageAlert from './transitionMessageAlert';
 //@ts-ignore
-import { decodeZilPayError } from './decodeMessage'; 
 import ContextContainer from "./contextContainer";  
+import decodeZilPayError from './decodeMessage';
 
-const { zilPay, contract } = ContextContainer.useContainer();
-
-const isOwner = async ( ) => {
+const isEmployee = async (
+    zilPay: any, 
+    contract: any
+     ) => {
     try {
         const callTransition = await contract.call(
-            'configureMinter',
+            'isEmployee',[ 
+                { 
+                   vname: "address", 
+                   type: "ByStr20",
+                    value: zilPay,
+                }
+            ],
             getCallParameters(zilPay)
         );
         transitionMessageAlert(zilPay, callTransition.ID, 'Minter Created');
     } catch (error) {
-        toast.error(decodeZilPayError(error));
+        toast.error(decodeZilPayError(JSON.stringify(error)));
     }
 };
 
-export default isOwner;
+export default isEmployee;

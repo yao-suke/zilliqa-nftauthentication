@@ -20,6 +20,7 @@ import logo from './logo.png';
 import ContextContainer from '../functions/contextContainer';  
 //@ts-ignore
 import configureMinter from '../functions/configureMinter'
+import isEmployee from '../functions/isEmployee';
 
 function Copyright(props: any) {
   return (
@@ -51,19 +52,10 @@ export default function SignIn() {
       password: data.get('password'),
     });
   };  
+ const { zilPay, contract } = ContextContainer.useContainer(); 
 
-  //context container error?
- // const { zilPay, contract } = ContextContainer.useContainer(); 
-//  const createMinter = async () => {
- //   configureMinter(contract, zilPay);
-//  };  
-
-// pass in user's zilpay wallet as parameter to do checks on smart contract 
   const handleExistingUser = () => {  
-    //check to see if employee has the nft in there zilpay through smart contract 
-    //if not pass them trigger popup for registering
-    //if so then pass them to the next screen
-    
+    isEmployee(zilPay, contract)
   }
 
   return (
@@ -105,9 +97,8 @@ export default function SignIn() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }} 
               onClick = {() => {  
-                //pass in zilpay address here
+                handleExistingUser()
                 history.push('/dashboard')
-                
               }}
             >
               Login
