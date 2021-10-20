@@ -6,12 +6,19 @@ import transitionMessageAlert from './transitionMessageAlert';
 import { decodeZilPayError } from './decodeMessage'; 
 import ContextContainer from "./contextContainer";  
 
-const { zilPay, contract } = ContextContainer.useContainer();
-
-const isOwner = async ( ) => {
+const isEmployee = async (
+    zilPay: any, 
+    contract: any
+     ) => {
     try {
         const callTransition = await contract.call(
-            'configureMinter',
+            'isEmployee',[ 
+                { 
+                   vname: "address", 
+                   type: "ByStr20",
+                    value: zilPay,
+                }
+            ],
             getCallParameters(zilPay)
         );
         transitionMessageAlert(zilPay, callTransition.ID, 'Minter Created');
@@ -20,4 +27,4 @@ const isOwner = async ( ) => {
     }
 };
 
-export default isOwner;
+export default isEmployee;
