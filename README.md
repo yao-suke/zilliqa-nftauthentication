@@ -24,7 +24,7 @@ The onboarding process for employees at tech companies is a long road of usernam
 ## Potential Use Cases <a name="usecases"></a>   
 
 ### COVID-19 Vaccination Status
-Can A DApp application be built that mints an NFT to records a person's vaccination status. 
+Can A DApp application be built that mints an NFT to records a person's vaccination status? 
 
 ### DAOs 
 What if when users joined a DAO on Zilliqa they have an NFT minted to give them access to tools for those in the DAO? 
