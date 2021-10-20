@@ -19,7 +19,11 @@ The onboarding process for employees at tech companies is a long road of usernam
 ## High Level Solution <a name="solution"></a>
 <img src="https://github.com/yao-suke/zilliqa-nftauthentication/blob/main/Screen%20Shot%202021-10-18%20at%2012.30.13%20AM.png" width="500" height="450"/>
 
-## Potential Use Cases <a name="usecases"></a> 
+## Potential Use Cases <a name="usecases"></a>   
+
+### COVID-19 
+Can A DApp application be built that mints an NFT to records a person's vaccination status. 
+
 ### DAOs 
 What if when users joined a DAO on Zilliqa they have an NFT minted to give them access to tools for those in the DAO? 
 
