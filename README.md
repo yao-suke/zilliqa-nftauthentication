@@ -21,7 +21,7 @@ The onboarding process for employees at tech companies is a long road of usernam
 
 ## Potential Use Cases <a name="usecases"></a>   
 
-### COVID-19 
+### COVID-19 Vaccination Status
 Can A DApp application be built that mints an NFT to records a person's vaccination status. 
 
 ### DAOs 
