@@ -20,7 +20,7 @@ The onboarding process for employees at tech companies is a long road of usernam
 <img src="https://github.com/yao-suke/zilliqa-nftauthentication/blob/main/Screen%20Shot%202021-10-18%20at%2012.30.13%20AM.png" width="500" height="450"/>  
 
 ## Systems Design 
-<img src="https://github.com/yao-suke/zilliqa-nftauthentication/blob/main/nft_Systems_Design.pdf" width="500" height="450"/>  
+<img src="https://github.com/yao-suke/zilliqa-nftauthentication/blob/main/Screen%20Shot%202021-10-19%20at%2010.12.04%20PM.png" width="500" height="450"/>  
 
 ## Potential Use Cases <a name="usecases"></a>   
 
