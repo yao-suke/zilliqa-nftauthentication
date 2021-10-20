@@ -102,7 +102,7 @@ const decodeMessage = (code: string) => {
     return messageCodes[code];
 };
 
-export const decodeZilPayError = (error: string) => {
+ const decodeZilPayError = (error: string) => {
     console.log(error);
     switch (error) {
         case "Insufficient funds in source account!":
@@ -114,4 +114,4 @@ export const decodeZilPayError = (error: string) => {
     }
 };
 
-export default decodeMessage;
+export default decodeZilPayError;

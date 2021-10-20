@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -14,14 +14,17 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AddressForm from './AddressForm';
 import WalletForm from './WalletForm';
-import Review from './Review';
+import Review from './Review'; 
+import ContextContainer from "../../functions/contextContainer";  
+import configureMinter from "../../functions/configureMinter" 
+import mintNFT from "../../functions/mint"
 
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+      NakomotoLabs
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -35,10 +38,6 @@ function getStepContent(step: number) {
   switch (step) {
     case 0:
       return <AddressForm />;
-    case 1:
-      return <WalletForm />;
-    case 2:
-      return <Review />;
     default:
       throw new Error('Unknown step');
   }
@@ -46,8 +45,11 @@ function getStepContent(step: number) {
 
 const theme = createTheme();
 
-export default function AdminPage() {
-  const [activeStep, setActiveStep] = React.useState(0);
+export default function AdminPage() { 
+  var [employeeAddress, setAddress] = useState<string>("");
+  const [activeStep, setActiveStep] = React.useState(0); 
+  const [zilPayCheck, setZilPayCheck] = useState<number>(0);
+  const { zilPay, contract } = ContextContainer.useContainer();
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
@@ -55,10 +57,43 @@ export default function AdminPage() {
 
   const handleBack = () => {
     setActiveStep(activeStep - 1);
-  };
+  }; 
 
-  return (
-    <ThemeProvider theme={theme}>
+  const connectZilPay = async () => {
+    await zilPay.wallet.connect();
+    window.location.reload();
+};  
+
+const createMinter = async () => {  
+  configureMinter(zilPay, contract);
+}; 
+
+const mintNonFungible = async (walletAddress: any) => {  
+  const token_uri = "engineer" 
+  const token_id = Math.random()
+  mintNFT(walletAddress, token_id, token_uri, zilPay, contract)
+} 
+
+const createNewEmployee = async (walletAddress: any) => {  
+  createMinter() 
+  mintNonFungible(walletAddress)
+
+}
+
+  return zilPay.wallet.isConnect ? (  
+    
+    <ThemeProvider theme={theme}> 
+    {/* {!zilPay.wallet.isConnect && (
+                    <>
+                        <h4 className="text-xs font-semibold text-gray-500 tracking-wide uppercase py-4">
+                            ZilPay
+                        </h4>
+                        <Button variant = "contained" onClick={connectZilPay}> 
+                        Connect ZilPay
+                        </Button>
+                    </>
+                )}  */}
+
       <CssBaseline />
       <AppBar
         position="absolute"
@@ -71,22 +106,22 @@ export default function AdminPage() {
       >
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
-            Company name
+            NakomotoLabs
           </Typography>
         </Toolbar>
       </AppBar>
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
           <Typography component="h1" variant="h4" align="center">
-            Checkout
+            New Employee Creation
           </Typography>
-          <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
+          {/* <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
             {steps.map((label) => (
               <Step key={label}>
                 <StepLabel>{label}</StepLabel>
               </Step>
             ))}
-          </Stepper>
+          </Stepper> */} 
           <React.Fragment>
             {activeStep === steps.length ? (
               <React.Fragment>
@@ -110,10 +145,9 @@ export default function AdminPage() {
                   )}
                   <Button
                     variant="contained"
-                    onClick={handleNext}
-                    sx={{ mt: 3, ml: 1 }}
+                    onClick={() => createNewEmployee("0xf3CEc1eaD24f553ad14aC03eA4EfB2F7E9708011")}
                   >
-                    {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
+                    Mint NFT For Employee
                   </Button>
                 </Box>
               </React.Fragment>
@@ -123,5 +157,24 @@ export default function AdminPage() {
         <Copyright />
       </Container>
     </ThemeProvider>
-  );
+  ) : ( 
+    <AppBar
+    position="absolute"
+    color="default"
+    elevation={0}
+    sx={{
+      position: 'relative',
+      borderBottom: (t) => `1px solid ${t.palette.divider}`,
+    }}
+  >
+    <Toolbar>
+      <Typography variant="h6" color="inherit" noWrap>
+        Lets Connect ZilPay! 
+      </Typography>
+    </Toolbar> 
+    <Button variant="contained" onClick={connectZilPay}> ZilPay Connection </Button>
+  </AppBar> 
+  
+    
+);
 }
