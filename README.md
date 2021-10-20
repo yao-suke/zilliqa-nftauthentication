@@ -51,11 +51,12 @@ DNS Hijacking
 Data loss/cloud server becoming compromised
 
 - We can also use a decentralized storage solution such as the [Akash network](https://akash.network/) as a backup in case a centralized point such as Amazon were to be fail or be compromised. 
+<img src="https://github.com/yao-suke/zilliqa-nftauthentication/blob/main/Screen%20Shot%202021-10-20%20at%2012.46.22%20AM.png" width="500" height="450"/>  
 
 ## Future Features and Plans <a name="future"></a>
 - Finishing the core functionality of the DApp. Would love for this repository to be an option for future DApps on Zilliqa to fork and use for their developers 
 - Creating Administrator Smart Contract to have NFT minting and other IT services managed by this smart contract 
-- Creating GraphQL Schema for saving NFT meta data
+- Creating GraphQL Schema for saving NFT meta data 
 
 ## Technologies Used <a name="tech"></a>    
 
