@@ -44,8 +44,6 @@ Similar to BAYC on ethereum, it would be great to provide the boiler plate code 
 #### Possible Solutions For Security Concerns  
 Keeping a decentralized copy of the DApp's front end hosted on Skynet using an HNS Domain in this instance would be useful for victims of this attack to be able to still access the original smart contracts. HNS Domains are censorship-resistant, seizure-resistant, and tamper-proof because they are stored on a Proof-of-Work blockchain.
 
-If the Admin smart contract is exploited then there would be extremely damaging reprecussions to the organization. I do not see any in the current implementation of the smart contract but as it becomes more robust with more functionality there is potential for vunerabilities to slip through the cracks.  a full
-
 ## Future Features and Plans <a name="future"></a>
 - Finishing the core functionality of the DApp. Would love for this repository to be an option for future DApps on Zilliqa to fork and use for their developers 
 - Creating Administrator Smart Contract to have NFT minting and other IT services managed by this smart contract 
