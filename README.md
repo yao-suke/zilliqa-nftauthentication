@@ -57,8 +57,8 @@ Keeping a decentralized copy of the DApp's front end hosted on Skynet using an H
 
 
 ## Setup <a name="setup"></a>
-#### Clone Repository 
-#### Enter Repository On Terminal 
-#### Run npm install 
-#### Run yarn start
+### Clone Repository 
+### Enter Repository On Terminal 
+### Run `npm install`
+### Run `yarn start`
 
