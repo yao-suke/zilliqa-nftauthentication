@@ -13,6 +13,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import AdminPage from './components/AdminPageF/AdminPage';
+import Review from './components/AdminPageF/Review';
 
 const App: React.FC = () => { 
   const [showSignUp, setShowSignUp] = useState<boolean>(false);
@@ -85,7 +86,8 @@ const App: React.FC = () => {
       <div className = "App">  
       <Switch>
       <Route path="/signin" component={SignIn}/>  
-      <Route path="/dashboard" component={Dashboard}/> 
+      <Route path="/dashboard" component={Dashboard}/>  
+      <Route path="/success" component={Review}/> 
       <Route path="/admin" component={AdminPage}/> 
       </Switch>
       

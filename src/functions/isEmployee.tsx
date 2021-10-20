@@ -3,8 +3,8 @@ import toast from 'react-hot-toast';
 //@ts-ignore
 import transitionMessageAlert from './transitionMessageAlert';
 //@ts-ignore
-import { decodeZilPayError } from './decodeMessage'; 
 import ContextContainer from "./contextContainer";  
+import decodeZilPayError from './decodeMessage';
 
 const isEmployee = async (
     zilPay: any, 
@@ -23,7 +23,7 @@ const isEmployee = async (
         );
         transitionMessageAlert(zilPay, callTransition.ID, 'Minter Created');
     } catch (error) {
-        toast.error(decodeZilPayError(error));
+        toast.error(decodeZilPayError(JSON.stringify(error)));
     }
 };
 
