@@ -83,7 +83,6 @@ export default function SignIn() {
           </Typography>
         </Toolbar>
       </AppBar> 
-      <div style={{ backgroundImage: `url(${backgroundImage})` }} >
       <Container component="main" maxWidth="xs"> 
         <Box
           sx={{
@@ -120,7 +119,7 @@ export default function SignIn() {
           </Box>
         </Box>
       </Container> 
-      </div>
+
     </ThemeProvider>
   );
 }

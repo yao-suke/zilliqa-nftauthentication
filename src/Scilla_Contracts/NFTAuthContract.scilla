@@ -54,7 +54,7 @@ type Error =
   | CodeNotAuthorised
   | CodeNotFound
   | CodeTokenExists
-  | CodeUnexpectedError
+  | CodeUnexpectedError 
 
 let make_error_event =
   fun (result : Error) =>
@@ -188,7 +188,21 @@ transition isOwner(token_id: Uint256, address: ByStr20)
                     is_owner : is_owner_bool};
   msgs = one_msg msg_to_sender;
   send msgs
-end
+end 
+
+transition isEmployee(address: ByStr20) 
+  isEmployee <- exists token_owners[address] 
+  match isEmployee with 
+    True =>  
+      (* Emit success event *)
+      msg_to_sender = { _tag : "isEmployeeCallBack"; _recipient : _sender; _amount : Uint128 0;
+                    is_owner : is_owner_bool};
+      msgs = one_msg msg_to_sender; 
+      send msgs
+    False => 
+    err = CodeNotAuthorised;
+    EmitError err
+
 
 transition isApprovedForAll(token_owner: ByStr20, operator: ByStr20)
   some_operator_approval <- operator_approvals[token_owner][operator];

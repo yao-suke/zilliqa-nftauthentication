@@ -46,7 +46,7 @@ function getStepContent(step: number) {
 const theme = createTheme();
 
 export default function AdminPage() { 
-  var employeeAddress: any
+  var [employeeAddress, setAddress] = useState<string>("");
   const [activeStep, setActiveStep] = React.useState(0); 
   const [zilPayCheck, setZilPayCheck] = useState<number>(0);
   const { zilPay, contract } = ContextContainer.useContainer();
@@ -65,18 +65,18 @@ export default function AdminPage() {
 };  
 
 const createMinter = async () => {  
-  configureMinter();
+  configureMinter(zilPay, contract);
 }; 
 
 const mintNonFungible = async (walletAddress: any) => {  
-  const token_uri = "" 
-  const token_id = ""
-  mintNFT(walletAddress, token_uri, token_id)
+  const token_uri = "engineer" 
+  const token_id = Math.random()
+  mintNFT(walletAddress, token_id, token_uri, zilPay, contract)
 } 
 
 const createNewEmployee = async (walletAddress: any) => {  
   createMinter() 
-//mintNonFungible(walletAddress)
+  mintNonFungible(walletAddress)
 
 }
 
@@ -145,7 +145,7 @@ const createNewEmployee = async (walletAddress: any) => {
                   )}
                   <Button
                     variant="contained"
-                    onClick={() => createNewEmployee("")}
+                    onClick={() => createNewEmployee("0xf3CEc1eaD24f553ad14aC03eA4EfB2F7E9708011")}
                   >
                     Mint NFT For Employee
                   </Button>

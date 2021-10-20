@@ -1,17 +1,16 @@
 import toast from 'react-hot-toast';
 //@ts-ignore
 import transitionMessageAlert from './transitionMessageAlert';
-//@ts-ignore
-import { decodeZilPayError } from './decodeMessage'; 
 import ContextContainer from "./contextContainer";  
 import getCallParameters from './getCallParameters';
-
-const { zilPay, contract } = ContextContainer.useContainer();
+import decodeZilPayError from './decodeMessage';
 
 const mint = async ( 
     to: any, 
     token_id: any, 
-    token_uri: any
+    token_uri: any,  
+    zilPay: any,
+    contract: any
 ) => { 
   
     try {
@@ -39,7 +38,7 @@ const mint = async (
         );
         transitionMessageAlert(zilPay, callTransition.ID, 'Minting NFT to to new employee');
     } catch (error) {
-        toast.error(decodeZilPayError(error));
+        toast.error(decodeZilPayError(JSON.stringify(error)))
     }
 };
 
