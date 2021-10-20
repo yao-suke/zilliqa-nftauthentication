@@ -43,8 +43,11 @@ Similar to BAYC on ethereum, it would be great to provide the boiler plate code 
 - Loss of metadata in cloud server. This could potentially make the smart contracts useless if any data needed to call transitions in our smart contracts are missing. 
 
 
-#### Possible Solutions For Security Concerns  
-Keeping a decentralized copy of the DApp's front end hosted on Skynet using an [HNS Domain](https://hnsdomain.com/) in this instance would be useful for victims of this attack to be able to still access the original smart contracts. HNS Domains are censorship-resistant, seizure-resistant, and tamper-proof because they are stored on a Proof-of-Work blockchain. 
+#### Possible Solutions For Security Concerns   
+DNS Hijacking
+Keeping a decentralized copy of the DApp's front end hosted on Skynet using an [HNS Domain](https://hnsdomain.com/) in this instance would be useful for victims of this attack to be able to still access the original smart contracts. HNS Domains are censorship-resistant, seizure-resistant, and tamper-proof because they are stored on a Proof-of-Work blockchain.  
+
+Data loss/cloud server becoming compromised
 We can also use a decentralized storage solution such as the [Akash network](https://akash.network/) as a backup in case a centralized point such as Amazon were to be fail or be compromised. 
 
 ## Future Features and Plans <a name="future"></a>
