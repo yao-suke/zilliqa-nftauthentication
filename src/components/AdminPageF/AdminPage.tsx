@@ -70,13 +70,14 @@ const createMinter = async () => {
 }; 
 
 const mintNonFungible = async (walletAddress: any) => {  
-  const token_uri = "engineer" 
-  const token_id = Math.random()
+  const token_uri = "yao-suke"  
+  const random_id = Math.random()
+  const token_id =  '4'
   mintNFT(walletAddress, token_id, token_uri, zilPay, contract)
 } 
 
 const createNewEmployee = async (walletAddress: any) => {  
-  createMinter() 
+  // createMinter() 
   mintNonFungible(walletAddress)
 
 }
@@ -145,8 +146,9 @@ const createNewEmployee = async (walletAddress: any) => {
                     </Button>
                   )}
                   <Button
-                    variant="contained"
-                    onClick={ () => { createNewEmployee("0xf3CEc1eaD24f553ad14aC03eA4EfB2F7E9708011") 
+                    variant="contained" 
+                    //will have dynamic value passed in later 
+                    onClick={ () => { createNewEmployee("0xa5cc0171d12415Ff6a6e0f26780Bae361B927057") 
                     
                   }}
                   >

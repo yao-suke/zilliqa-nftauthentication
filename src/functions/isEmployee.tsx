@@ -12,11 +12,16 @@ const isEmployee = async (
      ) => {
     try {
         const callTransition = await contract.call(
-            'isEmployee',[ 
+            'isOwner',[  
+                { 
+                    vname: "token_id", 
+                    type: "Uint256",
+                     value: "4",
+                 },
                 { 
                    vname: "address", 
                    type: "ByStr20",
-                    value: zilPay,
+                    value: "0xa5cc0171d12415Ff6a6e0f26780Bae361B927057",
                 }
             ],
             getCallParameters(zilPay)

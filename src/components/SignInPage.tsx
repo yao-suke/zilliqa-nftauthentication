@@ -20,7 +20,8 @@ import logo from './logo.png';
 import ContextContainer from '../functions/contextContainer';  
 //@ts-ignore
 import configureMinter from '../functions/configureMinter'
-import isEmployee from '../functions/isEmployee';
+import isEmployee from '../functions/isEmployee'; 
+
 
 function Copyright(props: any) {
   return (
@@ -90,7 +91,16 @@ export default function SignIn() {
           {/* <Typography component="h1" variant="h5">
             Connect Zilpay Wallet
           </Typography>  */}
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}> 
+          <TextField
+            required
+            id="firstName"
+            name="firstName"
+            label="Token Id"
+            fullWidth
+            autoComplete="given-name"
+            variant="standard"
+          />
             <Button
               type="submit"
               fullWidth

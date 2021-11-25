@@ -7,7 +7,7 @@ import decodeZilPayError from './decodeMessage';
 
 const mint = async ( 
     to: any, 
-    token_id: any, 
+    token_id: String, 
     token_uri: any,  
     zilPay: any,
     contract: any
